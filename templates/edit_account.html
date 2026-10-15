@@ -1,0 +1,167 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Account - Bank Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏦 Bank Management
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+            <a href="/admin-dashboard">Dashboard</a>
+            <a href="/customers">Customers</a>
+            <a href="/accounts">Accounts</a>
+            <a href="/transactions">Transactions</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="customer-section">
+
+        <div class="customer-header">
+
+            <h1>Edit Account</h1>
+
+            <p>
+                Update account information
+            </p>
+
+        </div>
+
+
+        <div class="form-container">
+
+            <form method="POST">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Account Number
+                    </label>
+
+                    <input
+                        type="text"
+                        name="account_number"
+                        value="{{ account[1] }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Account Type
+                    </label>
+
+                    <select name="account_type" required>
+
+                        <option value="Savings"
+                            {% if account[2] == "Savings" %}selected{% endif %}>
+                            Savings
+                        </option>
+
+                        <option value="Current"
+                            {% if account[2] == "Current" %}selected{% endif %}>
+                            Current
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Current Balance
+                    </label>
+
+                    <input
+                        type="text"
+                        value="₹{{ account[3] }}"
+                        disabled
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Account Status
+                    </label>
+
+                    <select name="status" required>
+
+                        <option value="Active"
+                            {% if account[4] == "Active" %}selected{% endif %}>
+                            Active
+                        </option>
+
+                        <option value="Inactive"
+                            {% if account[4] == "Inactive" %}selected{% endif %}>
+                            Inactive
+                        </option>
+
+                        <option value="Blocked"
+                            {% if account[4] == "Blocked" %}selected{% endif %}>
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button type="submit">
+                    Update Account
+                </button>
+
+                <a href="/accounts"
+                   class="clear-btn">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Bank Management System. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```

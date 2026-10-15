@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>New Transaction - Bank Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏦 Bank Management
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/admin-dashboard">
+                Dashboard
+            </a>
+
+            <a href="/customers">
+                Customers
+            </a>
+
+            <a href="/accounts">
+                Accounts
+            </a>
+
+            <a href="/transactions">
+                Transactions
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="customer-section">
+
+        <div class="customer-header">
+
+            <h1>
+                New Transaction
+            </h1>
+
+            <p>
+                Deposit or withdraw money from an account
+            </p>
+
+        </div>
+
+
+        <div class="table-container"
+             style="padding: 30px; max-width: 650px;">
+
+            <form method="POST">
+
+
+                <!-- Account -->
+
+                <label>
+                    Select Account
+                </label>
+
+                <select
+                    name="account_id"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+                    <option value="">
+                        -- Select Account --
+                    </option>
+
+                    {% for account in accounts %}
+
+                    <option value="{{ account[0] }}">
+
+                        {{ account[1] }}
+                        -
+                        {{ account[2] }}
+                        (Balance: ₹{{ account[3] }})
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+
+                <!-- Transaction Type -->
+
+                <label>
+                    Transaction Type
+                </label>
+
+                <select
+                    name="transaction_type"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+                    <option value="">
+                        -- Select Type --
+                    </option>
+
+                    <option value="Deposit">
+                        Deposit
+                    </option>
+
+                    <option value="Withdrawal">
+                        Withdrawal
+                    </option>
+
+                </select>
+
+
+                <!-- Amount -->
+
+                <label>
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    name="amount"
+                    min="1"
+                    step="0.01"
+                    placeholder="Enter amount"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+
+                <button
+                    type="submit"
+                    style="background:#2563eb; color:white;"
+                >
+                    Process Transaction
+                </button>
+
+
+                <a
+                    href="/transactions"
+                    class="clear-btn"
+                    style="margin-left:10px;"
+                >
+                    Cancel
+                </a>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Bank Management System. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+

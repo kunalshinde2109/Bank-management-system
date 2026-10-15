@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Add Account - Bank Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏦 Bank Management
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/admin-dashboard">
+                Dashboard
+            </a>
+
+            <a href="/customers">
+                Customers
+            </a>
+
+            <a href="/accounts">
+                Accounts
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Add Account -->
+
+    <section class="customer-section">
+
+        <div class="customer-header">
+
+            <h1>
+                Create New Account
+            </h1>
+
+            <p>
+                Create a bank account for an existing customer
+            </p>
+
+        </div>
+
+
+        <div class="table-container"
+             style="padding: 30px; max-width: 650px;">
+
+            <form method="POST">
+
+
+                <!-- Customer -->
+
+                <label>
+                    Select Customer
+                </label>
+
+                <select name="customer_id"
+                        required
+                        style="width:100%; padding:12px; margin:8px 0 20px;">
+
+                    <option value="">
+                        -- Select Customer --
+                    </option>
+
+                    {% for customer in customers %}
+
+                    <option value="{{ customer[0] }}">
+                        {{ customer[1] }}
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+
+                <!-- Account Number -->
+
+                <label>
+                    Account Number
+                </label>
+
+                <input
+                    type="text"
+                    name="account_number"
+                    placeholder="Enter account number"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+
+                <!-- Account Type -->
+
+                <label>
+                    Account Type
+                </label>
+
+                <select
+                    name="account_type"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+                    <option value="">
+                        -- Select Account Type --
+                    </option>
+
+                    <option value="Savings">
+                        Savings
+                    </option>
+
+                    <option value="Current">
+                        Current
+                    </option>
+
+                </select>
+
+
+                <!-- Balance -->
+
+                <label>
+                    Initial Balance
+                </label>
+
+                <input
+                    type="number"
+                    name="balance"
+                    step="0.01"
+                    min="0"
+                    value="0"
+                    required
+                    style="width:100%; padding:12px; margin:8px 0 20px;"
+                >
+
+
+                <!-- Buttons -->
+
+                <button
+                    type="submit"
+                    style="background:#2563eb; color:white;"
+                >
+                    Create Account
+                </button>
+
+
+                <a
+                    href="/accounts"
+                    class="clear-btn"
+                    style="margin-left:10px;"
+                >
+                    Cancel
+                </a>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Bank Management System. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+```

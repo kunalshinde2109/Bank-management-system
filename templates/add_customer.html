@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Customer - Bank Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏦 Bank Management
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/admin-dashboard">Dashboard</a>
+            <a href="/customers">Customers</a>
+        </div>
+
+    </nav>
+
+
+    <section class="customer-section">
+
+        <div class="customer-header">
+            <h1>Add New Customer</h1>
+            <p>Register a new bank customer</p>
+        </div>
+
+
+        <div class="form-container">
+
+            <form method="POST">
+
+                <label>Full Name</label>
+                <input type="text" name="full_name" required>
+
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+
+                <label>Phone</label>
+                <input type="text" name="phone">
+
+
+                <label>Address</label>
+                <textarea name="address"></textarea>
+
+
+                <label>Password</label>
+                <input type="password" name="password" required>
+
+
+                <button type="submit">
+                    Add Customer
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>
+            © 2026 Bank Management System. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+
+</html>

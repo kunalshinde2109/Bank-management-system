@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🏦 Bank Management
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="/admin-login">Admin Login</a>
+            <a href="/customer-login">Customer Login</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Welcome to Our Bank</h1>
+
+            <p>
+                A secure and simple Bank Management System
+                for managing accounts and transactions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/customer-login" class="btn primary-btn">
+                    Customer Login
+                </a>
+
+                <a href="/admin-login" class="btn secondary-btn">
+                    Admin Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+
+        <h2>About Our Banking System</h2>
+
+        <p>
+            Our Bank Management System provides a secure platform
+            for customers and administrators to manage banking
+            activities efficiently.
+        </p>
+
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Deposit</h3>
+                <p>Deposit money securely into your bank account.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💸</div>
+                <h3>Withdraw</h3>
+                <p>Withdraw money easily from your account.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Money Transfer</h3>
+                <p>Transfer money securely between accounts.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📜</div>
+                <h3>Transaction History</h3>
+                <p>View and track your banking transactions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Bank Management System. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
